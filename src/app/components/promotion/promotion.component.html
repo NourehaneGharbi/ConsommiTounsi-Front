@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Demande de Promotion</h4>
+                        <p class="card-category">Ajouter un promotion pour vos produits</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Type de Promotion
+                                    </th>
+                                    <th>
+                                        Valeur de Promotion
+                                    </th>
+                                    <th>
+                                        Nouvel prix
+                                    </th>
+                                    <th>
+                                        Nom Produit
+                                    </th>
+                                    <th>
+                                        Date Debut 
+                                    </th>
+                                    <th>
+                                        Date Fin
+                                    </th>
+                                    <th>
+                                      Action
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let promotion of listPromotions">
+                                    <tr>
+                                        <td>
+                                          {{promotion.idPromotion}}
+                                        </td>
+                                        <td>
+                                          {{promotion.typePromotion}}
+                                        </td>
+                                        <td>
+                                          {{promotion.valeurPromotion}}%
+                                        </td>
+                                        <td>
+                                            {{promotion.newProductPrice}}dt
+                                        </td>
+                                        <td>
+                                            {{promotion.stock.libelleStock}}
+                                        </td>
+                                        <td>
+                                            {{promotion.datePromotionDebut}}
+                                        </td>
+                                        <td>
+                                            {{promotion.datePromotionFin}}
+                                        </td>
+                                        <td>
+                                          <div class="col-md-4">
+                                            <button mat-raised-button class="btn btn-light" (click)="addPromotion(promotion)">Vérifier</button>
+                                          </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="col-md-4">
+                                                <button mat-raised-button class="btn btn-danger" (click)="deletePromotion(promotion.idPromotion)">Supprimer</button>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

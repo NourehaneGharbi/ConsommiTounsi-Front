@@ -1,0 +1,71 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des Stocks</h4>
+                        <p class="card-category">Voici les Stocks de notre Magazine</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Quantite
+                                    </th>
+                                    <th>
+                                        Quantite Min
+                                    </th>
+                                    <th>
+                                        Libelle Stock
+                                    </th>
+                                    <th>
+                                        Date Creation Stock
+                                    </th>
+                                    <th>
+                                        Date Expiration
+                                    </th>
+                                    <th>
+                                      Action
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let p of liststock">
+                                    <tr>
+                                        <td>
+                                            {{p.idStock}}
+                                        </td>
+                                        <td>
+                                            {{p.quantite}}
+                                        </td>
+                                        <td>
+                                            {{p.quantiteMin}}
+                                        </td>
+                                        <td>
+                                            {{p.libelleStock}}
+                                        </td>
+                                        <td>
+                                            {{p.dateCreationStock}}
+                                        </td>
+                                        <td>
+                                            {{p.dateExpiration}}
+                                        </td>
+                                        <td>
+                                          <div class="col-md-4">
+                                            <button mat-raised-button class="btn btn-danger" (click)="deleteStock(p.idStock)">Supprimer</button>
+                                          </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

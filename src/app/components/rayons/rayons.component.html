@@ -1,0 +1,57 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Liste des Rayons</h4>
+                      <p class="card-category"><a (click)="openDialog()">Ajouter Rayon</a></p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Type de Rayon
+                                  </th>
+                                  <th>
+                                      Categorie Produit
+                                  </th>
+                                  <th>
+                                    Action
+                                  </th>
+                              </thead>
+                              <tbody *ngFor="let rayon of listRayons">
+                                  <tr>
+                                      <td>
+                                        {{rayon.idRayons}}
+                                      </td>
+                                      <td>
+                                        {{rayon.typeRayons}}
+                                      </td>
+                                      <td>
+                                        {{rayon.categorieProduit}}
+                                      </td>
+                                      <td>
+                                        <div class="col-md-4">
+                                          <button mat-raised-button class="btn btn-light" (click)="editRayon(rayon)">Modifier</button>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div class="col-md-4">
+                                          <button mat-raised-button class="btn btn-danger" (click)="deleteRayon(rayon.idRayons)">Supprimer</button>
+                                        </div>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
